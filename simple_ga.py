@@ -13,14 +13,21 @@ def population(count, length, min, max):
 from operator import add
 from functools import reduce
 
-#generate individual
+#create fitness
 def fitness(individual, target):
-    sum = reduce(add, individual, 0)
+    sum = reduce(add, individual)
     return abs(target-sum)
-""""
+"""
 sample:
 a = individual(10, 0, 10)
 print(a)
 print(reduce(add, a, 0))
 print(fitness(a, 100))
 """
+
+#create grade
+def grade(pop, target):
+    summed = reduce(add, fitness(x, target) for x in pop)
+    return summed/(len(pop)*1.0)
+
+
