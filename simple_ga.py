@@ -38,7 +38,7 @@ def mutation(generation):
         print(f'Random number for individual number {n+1} is', "{:.2f}".format(r))
         if prob_mutate > r:
             print('0.5 is bigger than', "{:.2f}".format(r))
-            modify = randint(0, len(i)-1)
+            modify = randint(0, len(i) - 1)
             mod = modify + 1
             print(f'So this individual will mutate on number {mod}')
             print(i[modify])
